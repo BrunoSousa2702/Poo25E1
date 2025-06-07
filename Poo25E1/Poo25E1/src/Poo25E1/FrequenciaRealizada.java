@@ -1,25 +1,39 @@
 package Poo25E1;
 import java.util.Date;
 
+
 public class FrequenciaRealizada {
-	private ModeloODS modulo;
+    private ModuloODS IDmodulo;
     private int nota;
     private Date data;
-    
-    public FrequenciaRealizada(ModeloODS modulo, int nota, Date data) {
-        this.modulo = modulo;
+    private Estudante IDaluno;
+    private Date DataCerteficado;
+
+
+    public FrequenciaRealizada(ModuloODS IDmodulo, int nota, Date data, Estudante IDaluno, Date DataCerteficado) {
+        this.IDmodulo = IDmodulo;
         this.nota = nota;
         this.data = data;
-    }
-     
-    public ModeloODS getModulo() {
-        return modulo;
-    }
-    public int getNota() {
-        return nota;
-    }
-    public Date getData() {
-        return data;
+        this.setIDaluno(IDaluno);
+        this.DataCerteficado = DataCerteficado;
     }
 
+    
+    public ModuloODS getModulo() { return IDmodulo; }
+    
+    public int getNota() { 
+    	return nota; }
+    public Date getData() { 
+    	return data; }
+
+
+	public Estudante getIDaluno() {
+		return IDaluno;
+	}
+
+
+	public void setIDaluno(Estudante iDaluno) {
+		IDaluno = iDaluno;
+	}
 }
+
