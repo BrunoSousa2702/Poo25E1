@@ -4,7 +4,7 @@ public class Utilizador {
     private String nome;
     private String password;
     private String email;
-    private String tipo; // 'Estudante' ou 'Admin'
+    private String tipo;
 
     public Utilizador(String nome, String password, String email, String tipo) {
         this.nome = nome;

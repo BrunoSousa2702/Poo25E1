@@ -9,7 +9,7 @@ public class Estudante extends Utilizador {
     private ArrayList<ModuloODS> modulos;
     private ArrayList<FrequenciaRealizada> frequencias;
 
-    // Construtor
+    
     public Estudante(String nome, String password, String email, String tipo, int numeroAluno, String universidade) {
         super(nome, password, email, tipo);
         this.numeroAluno = numeroAluno;
@@ -18,13 +18,20 @@ public class Estudante extends Utilizador {
         this.frequencias = new ArrayList<>();
     }
 
-    // Getters
-    public int getNumeroAluno() { return numeroAluno; }
-    public String getUniversidade() { return universidade; }
-    public ArrayList<ModuloODS> getModulos() { return modulos; }
-    public ArrayList<FrequenciaRealizada> getFrequencias() { return frequencias; }
+  
+    public int getNumeroAluno() { 
+    	return numeroAluno; }
+    
+    public String getUniversidade() { 
+    	return universidade; }
+    
+    public ArrayList<ModuloODS> getModulos() { 
+    	return modulos; }
+    
+    public ArrayList<FrequenciaRealizada> getFrequencias() { 
+    	return frequencias; }
 
-    // Método para o estudante realizar o quiz de um módulo
+
     
     public int fazerQuiz(ModuloODS modulo) {
         Scanner scanner = new Scanner(System.in);
@@ -54,11 +61,9 @@ public class Estudante extends Utilizador {
             ModuloODS modulo = freq.getModulo();
             int notaFreq = freq.getNota();
 
-            // Somamos a nota (peso) obtida no quiz para o progresso
+            
             somaNotas += notaFreq;
 
-            // Calculamos também o peso total do módulo para normalizar progresso
-            // somaremos o peso total das perguntas do módulo
             int pesoTotalModulo = 0;
             for (Pergunta p : modulo.getPerguntas()) {
                 pesoTotalModulo += p.getPeso();

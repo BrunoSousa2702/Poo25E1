@@ -3,11 +3,11 @@ package Poo25E1;
 import java.util.ArrayList;
 
 public class ModuloODS {
-    private int ODS; // Número do ODS (1-17)
+    private int ODS; 
     private String nome;
     private String descricao;
     private String meta;
-    private ArrayList<Pergunta> perguntas; // Contém as perguntas (quiz) do módulo
+    private ArrayList<Pergunta> perguntas; 
 
     public ModuloODS(int ODS, String nome, String descricao, String meta) {
         this.ODS = ODS;
@@ -17,20 +17,29 @@ public class ModuloODS {
         this.perguntas = new ArrayList<>();
     }
 
-    // Getters e setters
-    public int getODS() { return ODS; }
-    public void setODS(int ODS) { this.ODS = ODS; }
 
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
+    public int getODS() { 
+    	return ODS; }
+    public void setODS(int ODS) { 
+    	this.ODS = ODS; }
 
-    public String getDescricao() { return descricao; }
-    public void setDescricao(String descricao) { this.descricao = descricao; }
+    public String getNome() { 
+    	return nome; }
+    public void setNome(String nome) { 
+    	this.nome = nome; }
 
-    public String getMeta() { return meta; }
-    public void setMeta(String meta) { this.meta = meta; }
+    public String getDescricao() { 
+    	return descricao; }
+    public void setDescricao(String descricao) { 
+    	this.descricao = descricao; }
 
-    public ArrayList<Pergunta> getPerguntas() { return perguntas; }
+    public String getMeta() { 
+    	return meta; }
+    public void setMeta(String meta) { 
+    	this.meta = meta; }
+
+    public ArrayList<Pergunta> getPerguntas() { 
+    	return perguntas; }
 
     public void adicionarPergunta(Pergunta pergunta) {
         perguntas.add(pergunta);

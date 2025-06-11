@@ -25,7 +25,7 @@ public class main {
             int opcao = -1;
             if (scanner.hasNextInt()) {
                 opcao = scanner.nextInt();
-                scanner.nextLine(); // Consumir a linha
+                scanner.nextLine(); 
             } else {
                 System.out.println("Por favor, insira um número válido.");
                 scanner.nextLine();
@@ -34,7 +34,7 @@ public class main {
 
             switch (opcao) {
                 case 1:
-                    // Registar Utilizador
+                    
                     System.out.println("=== Registar Utilizador ===");
                     System.out.print("Nome: ");
                     String nome = scanner.nextLine();
@@ -63,7 +63,7 @@ public class main {
                     break;
 
                 case 2:
-                    // Adicionar Módulo ODS
+                    
                     System.out.println("=== Adicionar Módulo ODS ===");
                     System.out.print("Email do utilizador que está a adicionar (deve ser admin): ");
                     String emailAdminCriar = scanner.nextLine();
@@ -89,7 +89,7 @@ public class main {
                     break;
 
                 case 3:
-                    // Remover Módulo ODS
+                   
                     System.out.println("=== Remover Módulo ODS ===");
                     System.out.print("Email do Admin que está a remover: ");
                     String emailAdminRemover = scanner.nextLine();
@@ -111,7 +111,7 @@ public class main {
                     break;
 
                 case 4:
-                    // Adicionar Perguntas a um Módulo
+                    
                     System.out.println("=== Adicionar Perguntas ===");
                     System.out.print("Email do Admin que está a adicionar perguntas: ");
                     String emailAdminPerguntas = scanner.nextLine();
@@ -151,7 +151,7 @@ public class main {
                     break;
 
                 case 5:
-                    // Fazer Quiz
+                    
                     System.out.println("=== Fazer Quiz ===");
                     System.out.print("Email do estudante: ");
                     String emailEstudante = scanner.nextLine();
@@ -185,21 +185,21 @@ public class main {
 
                     ModuloODS modQuiz = modulosDisp.get(moduloEscolhido);
                     if (modQuiz.getPerguntas().size() == 0) {
-                        System.out.println("Esse módulo não tem perguntas cadastradas ainda.");
+                        System.out.println("Esse módulo não tem perguntas registadas ainda.");
                         break;
                     }
 
                     int notaQuiz = estudante.fazerQuiz(modQuiz);
 
-                    // Criar uma frequência para salvar o resultado
+                    
                     FrequenciaRealizada fr = new FrequenciaRealizada(modQuiz, notaQuiz, new Date(), estudante, null);
                     gerir.registarFrequencia(fr);
 
-                    System.out.println("Frequência registrada com sucesso! Nota: " + notaQuiz);
+                    System.out.println("Frequência registada com sucesso! Nota: " + notaQuiz);
                     break;
 
                 case 6:
-                    // Consultar Progresso
+                   
                     System.out.println("=== Consultar Progresso ===");
                     System.out.print("Email do estudante: ");
                     String emailProg = scanner.nextLine();
@@ -216,7 +216,7 @@ public class main {
                     break;
 
                 case 7:
-                    System.out.println("A sair... Até breve!");
+                    System.out.println("A sair...!");
                     scanner.close();
                     System.exit(0);
                     break;

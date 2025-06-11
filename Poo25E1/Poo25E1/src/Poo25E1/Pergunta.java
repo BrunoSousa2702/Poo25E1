@@ -2,7 +2,7 @@ package Poo25E1;
 
 public class Pergunta {
     private String texto;
-    private String resposta; // Resposta correta
+    private String resposta; 
     private int peso;
 
     public Pergunta(String texto, String resposta, int peso) {
