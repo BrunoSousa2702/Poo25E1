@@ -35,5 +35,15 @@ public class FrequenciaRealizada {
 	public void setIDaluno(Estudante iDaluno) {
 		IDaluno = iDaluno;
 	}
+	
+	public void emitirCertificado() {
+	    this.DataCerteficado = new Date(); 
+	    System.out.println("=== CERTIFICADO ===");
+	    System.out.println("Aluno: " + this.IDaluno.getNome());
+	    System.out.println("Módulo: " + this.IDmodulo.getNome());
+	    System.out.println("Nota: " + this.nota);
+	    System.out.println("Data: " + this.data);
+	    System.out.println("Certificado emitido em: " + this.DataCerteficado);
+	}
 }
 

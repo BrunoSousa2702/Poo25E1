@@ -38,7 +38,7 @@ public class Estudante extends Utilizador {
         ArrayList<Pergunta> perguntas = modulo.getPerguntas();
         int notaTotal = 0;
         int pesoTotal = 0;
-        System.out.println("Iniciando quiz do módulo: " + modulo.getNome());
+        System.out.println("A iniciar o quiz do módulo: " + modulo.getNome());
         for (Pergunta pergunta : perguntas) {
             System.out.println(pergunta.getTexto());
             System.out.print("Sua resposta: ");

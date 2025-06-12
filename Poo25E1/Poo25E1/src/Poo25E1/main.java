@@ -19,7 +19,8 @@ public class main {
             System.out.println("4. Adicionar Perguntas a um Módulo (Admin)");
             System.out.println("5. Fazer Quiz (Estudante)");
             System.out.println("6. Consultar Progresso (Estudante)");
-            System.out.println("7. Sair");
+            System.out.println("7. Emitir Certificado");
+            System.out.println("8. Sair");
             System.out.print("Escolha uma opção: ");
 
             int opcao = -1;
@@ -214,9 +215,46 @@ public class main {
                     float progresso = estProg.calcularProgresso();
                     System.out.printf("Progresso do estudante %s: %.2f%%%n", estProg.getNome(), progresso * 100);
                     break;
-
                 case 7:
-                    System.out.println("A sair...!");
+                    System.out.println("=== Emitir Certificado ===");
+                    System.out.print("Email do estudante: ");
+                    String emailCert = scanner.nextLine();
+                    Utilizador userCert = gerir.buscarUtilizadorPorEmail(emailCert);
+                    
+                    if (userCert == null || !(userCert instanceof Estudante)) {
+                        System.out.println("Estudante não encontrado.");
+                        break;
+                    }
+                    Estudante estudanteCert = (Estudante) userCert;
+                    
+                  
+                    ArrayList<ModuloODS> modulosCompletados = new ArrayList<>();
+                    for (FrequenciaRealizada freq : estudanteCert.getFrequencias()) {
+                        modulosCompletados.add(freq.getModulo());
+                    }
+                    
+                    if (modulosCompletados.isEmpty()) {
+                        System.out.println("Este estudante não completou nenhum módulo.");
+                        break;
+                    }
+                    System.out.println("Módulos completados:");
+                    for (int i = 0; i < modulosCompletados.size(); i++) {
+                        System.out.println((i+1) + ". " + modulosCompletados.get(i).getNome());
+                    }
+                    
+                    System.out.print("Escolha o módulo para emitir certificado: ");
+                    int escolhaModulo = scanner.nextInt() - 1;
+                    scanner.nextLine();
+                    
+                    if (escolhaModulo >= 0 && escolhaModulo < modulosCompletados.size()) {
+                        gerir.emitirCertificado(estudanteCert, modulosCompletados.get(escolhaModulo));
+                    } else {
+                        System.out.println("Opção inválida.");
+                    }
+                    break;
+                    
+                case 8:
+                    System.out.println("A sair...");
                     scanner.close();
                     System.exit(0);
                     break;

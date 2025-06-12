@@ -59,6 +59,16 @@ public class Gerir {
         }
         return null;
     }
+    public void emitirCertificado(Estudante estudante, ModuloODS modulo) {
+        for (FrequenciaRealizada freq : frequencias) {
+            if (freq.getIDaluno().equals(estudante) && 
+                freq.getModulo().equals(modulo)) {
+                freq.emitirCertificado();
+                return;
+            }
+        }
+        System.out.println("Nenhuma frequência encontrada para emissão de certificado.");
+    }
 
     public ArrayList<ModuloODS> getModulos() {
         return modulos;
